@@ -238,6 +238,18 @@ a:hover { color: var(--slate-hover); }
 .action-bar .btn { min-height: 52px; padding: 0 12px; gap: 8px; font-size: 16px; }
 .action-bar .btn--outline { background: var(--white); }
 .action-bar .btn--outline:hover { background: var(--ink); }
+/* With JS, the bar starts hidden and slides in on scroll (see site.js). Without JS it's always shown. */
+.js .action-bar {
+  transform: translateY(100%); visibility: hidden;
+  transition: transform .25s ease, visibility 0s linear .25s;
+}
+.js .action-bar.is-visible {
+  transform: none; visibility: visible;
+  transition: transform .25s ease, visibility 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .action-bar, .js .action-bar.is-visible { transition: none; }
+}
 body { padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom)); }
 @media (min-width: 768px) {
   .action-bar { display: none; }
@@ -290,14 +302,14 @@ body { padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom)); 
 .hero__photo picture { flex-shrink: 0; }
 .hero__photo img { height: 500px; width: auto; max-width: none; margin-bottom: -60px; }
 
-/* Phones: the hero text fills the first screen (header to sticky bar), extra space above the headline,
-   so Pete's photo starts below the fold instead of peeking out above the action bar. */
+/* Phones: the hero text fills the first screen below the header, extra space above the headline,
+   so Pete's photo starts below the fold (the action bar is hidden until the visitor scrolls). */
 @media (max-width: 767px) {
   .hero__text {
     justify-content: flex-end;
     padding-bottom: 28px;
-    min-height: calc(100vh - 64px - var(--sticky-bar-h));
-    min-height: calc(100svh - 64px - var(--sticky-bar-h) - env(safe-area-inset-bottom));
+    min-height: calc(100vh - 64px);
+    min-height: calc(100svh - 64px);
   }
 }
 @media (min-width: 768px) {

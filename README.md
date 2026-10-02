@@ -10,7 +10,7 @@ public/                   everything that gets deployed
   index.html              homepage
   about/index.html        About the Attorney (served at /about/)
   assets/css/site.css     the only stylesheet; design tokens from the handoff are at the top
-  assets/js/menu.js       mobile menu toggle (the only script)
+  assets/js/site.js       mobile menu toggle + show-on-scroll action bar (the only script)
   assets/img/             optimized images (generated, see below)
   favicon-32.png, icon-192.png, apple-touch-icon.png, robots.txt, sitemap.xml
 source-assets/            original handoff images + tokens.css (not deployed)
@@ -45,7 +45,7 @@ npm run images
 
 - Layout follows the 1440 and 390 comps; between them, type and spacing scale fluidly (`clamp()`), and grids collapse per
   `DESIGN.md`: header switches to the compact icon header below 1200px, the hero/about opener stack below 1000px, other
-  two- and three-column sections stack below 1100px. The sticky Text/Call bar shows below 768px.
+  two- and three-column sections stack below 1100px. The sticky Text/Call bar shows below 768px; it slides in once the visitor scrolls (always shown if JS is off).
 - Mobile hero buttons read "Text Pete" / "Call Pete" as in the mobile comp; from 768px up they read
   "Text Attorney Pete >>" / "Call Attorney Pete >>".
 - The homepage "about" panel reuses the hero portrait (cropped to head and shoulders) by design.

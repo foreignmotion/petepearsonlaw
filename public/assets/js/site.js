@@ -27,3 +27,17 @@
     if (!menu.hidden && !menu.contains(e.target) && !button.contains(e.target)) setOpen(false);
   });
 })();
+
+// Mobile sticky action bar: hidden on load, slides in once the visitor scrolls.
+(function () {
+  var bar = document.querySelector('.action-bar');
+  if (!bar) return;
+  var SHOW_AFTER = 24; // px scrolled
+
+  function update() {
+    bar.classList.toggle('is-visible', window.scrollY > SHOW_AFTER);
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update(); // covers reloads mid-page and #anchor links
+})();
