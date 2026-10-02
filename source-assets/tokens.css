@@ -1,0 +1,54 @@
+/* Pete Pearson Law — design tokens
+   Source of truth for color, type, spacing, radius. Every value here is used in /mockups. */
+
+:root {
+  /* Grounds */
+  --paper:        #f5f3ee;  /* default page background */
+  --white:        #ffffff;  /* alternating reading bands */
+  --ink-band:     #1b1b18;  /* the one dark "chapter" band (When we chat, you'll:) */
+  --footer:       #141412;  /* footer */
+  --slate:        #395165;  /* hero, closing CTA band, about-page photo frame, primary buttons */
+  --slate-hover:  #2a3d4c;
+
+  /* Text */
+  --ink:          #1b1b18;  /* headings and body on paper/white */
+  --muted:        #5a5750;  /* secondary copy on paper/white (6.5:1 on paper) */
+  --on-dark:      #f5f3ee;  /* headings on slate / ink-band */
+  --on-dark-soft: #cacacd;  /* helper copy on slate (5.0:1) */
+  --on-ink-body:  #d9d5cc;  /* body copy on ink-band (11.9:1) */
+  --on-ink-muted: #b8b3a8;  /* footer small print */
+  --on-slate-soft:#e3e9ee;  /* deck copy on the closing slate band */
+
+  /* Accents */
+  --terracotta:        #9a4318;  /* small marks only: short rules, row numbers, quote marks, nav underline, focus ring */
+  --terracotta-on-dark:#e0a07a;  /* the same marks on slate / ink-band */
+
+  /* Lines */
+  --hairline:       #d6d2c8;  /* rules on paper/white */
+  --hairline-ink:   #1b1b18;  /* the heavier top rule of a ledger list */
+  --hairline-dark:  #5a5750;  /* rules on ink-band */
+  --hairline-footer:#3a3a35;
+
+  /* Type */
+  --font-display: 'Newsreader', Georgia, serif;          /* all headings, decks, pull lines, question rows, about letter */
+  --font-body:    'IBM Plex Sans', system-ui, sans-serif; /* body copy, buttons, nav */
+  --font-mono:    'IBM Plex Mono', monospace;             /* row numbers, years, small labels, footer small print */
+
+  /* Radius */
+  --radius-btn:   6px;
+  --radius-panel: 10px;
+
+  /* Layout */
+  --page-max:     1440px;
+  --gutter-desk:  120px;
+  --gutter-mob:   20px;
+  --col-gap:      24px;
+  --section-desk: 96px;   /* section padding-top/bottom on desktop (96–104) */
+  --section-mob:  44px;
+
+  /* Controls */
+  --btn-h:        54px;   /* desktop primary/secondary */
+  --btn-h-sm:     46px;   /* header */
+  --btn-h-lg:     60px;   /* closing band */
+  --tap-min:      44px;
+}
