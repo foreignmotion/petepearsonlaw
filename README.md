@@ -57,6 +57,5 @@ npm run images
 - Footer small print: attorney-advertising disclaimer, privacy policy link, office address (placeholder text is in both pages' footers).
 - Avvo badge and LinkedIn icon artwork (mono text links stand in for them now).
 - A second photo of Pete for the homepage "about" panel (currently reuses the portrait).
-- "Juristictions" typo on the About page: kept verbatim until the client confirms "Jurisdictions".
 - Once there's an office address, add it to the `Attorney` JSON-LD in `index.html`.
 - Confirm the production domain is `https://petepearsonlaw.com` (used in canonical URLs, Open Graph tags, JSON-LD and the sitemap).
