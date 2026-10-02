@@ -1,10 +1,10 @@
-// Generates the optimized images in /assets/img from the originals in /source-assets.
+// Generates the optimized images in public/assets/img from the originals in source-assets/.
 // Run with `npm run images` after replacing any source file.
 import sharp from 'sharp';
 import { mkdir, copyFile } from 'node:fs/promises';
 
 const SRC = new URL('../source-assets/', import.meta.url);
-const OUT = new URL('../assets/img/', import.meta.url);
+const OUT = new URL('../public/assets/img/', import.meta.url);
 const src = (f) => new URL(f, SRC).pathname;
 const out = (f) => new URL(f, OUT).pathname;
 

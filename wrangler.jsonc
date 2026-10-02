@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "petepearsonlaw",
+  "compatibility_date": "2026-10-01",
+  "observability": {
+    "enabled": true
+  },
+  // Only the public/ folder is deployed; tooling and source files stay out of the site.
+  "assets": {
+    "directory": "./public"
+  }
+}

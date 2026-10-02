@@ -6,20 +6,21 @@ Plain HTML + one stylesheet, no framework and no build step required to deploy.
 ## Structure
 
 ```
-index.html              homepage
-about/index.html        About the Attorney (served at /about/)
-assets/css/site.css     the only stylesheet; design tokens from the handoff are at the top
-assets/js/menu.js       mobile menu toggle (the only script)
-assets/img/             optimized images (generated, see below)
-favicon-32.png, icon-192.png, apple-touch-icon.png
-robots.txt, sitemap.xml
-source-assets/          original handoff images + tokens.css (not referenced by the pages)
-scripts/build-images.mjs  regenerates assets/img from source-assets
+public/                   everything that gets deployed
+  index.html              homepage
+  about/index.html        About the Attorney (served at /about/)
+  assets/css/site.css     the only stylesheet; design tokens from the handoff are at the top
+  assets/js/menu.js       mobile menu toggle (the only script)
+  assets/img/             optimized images (generated, see below)
+  favicon-32.png, icon-192.png, apple-touch-icon.png, robots.txt, sitemap.xml
+source-assets/            original handoff images + tokens.css (not deployed)
+scripts/build-images.mjs  regenerates public/assets/img from source-assets
+wrangler.jsonc            Cloudflare Workers config: serves public/ as static assets
 ```
 
-Deploy the repo root as-is to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, S3…).
-Asset paths are root-relative (`/assets/...`), so the site must be served from the domain root.
-`source-assets/`, `scripts/` and `package*.json` don't need to be public but are harmless if they are.
+Hosted on Cloudflare Workers (static assets). The Cloudflare build runs `npx wrangler deploy`, which uploads only `public/`.
+On any other static host, publish the `public/` folder as the site root. Asset paths are root-relative (`/assets/...`),
+so the site must be served from the domain root.
 
 ## Local preview
 
