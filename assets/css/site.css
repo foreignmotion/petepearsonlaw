@@ -515,7 +515,9 @@ body { padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom)); 
 .site-footer__fine {
   border-top: 1px solid var(--hairline-footer); padding-top: 20px;
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; line-height: 1.8; color: var(--on-ink-muted);
+  display: flex; flex-direction: column; gap: 8px;
 }
+.site-footer__fine p { max-width: 960px; }
 @media (min-width: 1000px) {
   .site-footer .wrap { gap: 32px; padding-block: 56px; }
   .site-footer__row { flex-direction: row; justify-content: space-between; align-items: center; }

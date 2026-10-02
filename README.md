@@ -55,7 +55,7 @@ npm run images
 
 ## Before launch — needs the client
 
-- Footer small print: attorney-advertising disclaimer, privacy policy link, office address (placeholder text is in both pages' footers).
+- Footer small print: privacy policy link and office address (placeholders in both pages' footers). The "No fee until you win" disclaimer is in place.
 - Avvo badge and LinkedIn icon artwork (mono text links stand in for them now).
 - Once there's an office address, add it to the `Attorney` JSON-LD in `index.html`.
 - Confirm the production domain is `https://petepearsonlaw.com` (used in canonical URLs, Open Graph tags, JSON-LD and the sitemap).
