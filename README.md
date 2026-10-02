@@ -10,7 +10,7 @@ public/                   everything that gets deployed
   index.html              homepage
   about/index.html        About the Attorney (served at /about/)
   assets/css/site.css     the only stylesheet; design tokens from the handoff are at the top
-  assets/js/site.js       mobile menu toggle + show-on-scroll action bar (the only script)
+  assets/js/site.js       mobile menu, show-on-scroll action bar, mobile hero photo fade-in (the only script)
   assets/img/             optimized images (generated, see below)
   favicon-32.png, icon-192.png, apple-touch-icon.png, robots.txt, sitemap.xml
 source-assets/            original handoff images + tokens.css (not deployed)

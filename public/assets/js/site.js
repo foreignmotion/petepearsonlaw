@@ -41,3 +41,17 @@
   window.addEventListener('scroll', update, { passive: true });
   update(); // covers reloads mid-page and #anchor links
 })();
+
+// Hero photo fade-in (phones only; the CSS hides it below 768px until revealed).
+(function () {
+  var photo = document.querySelector('.hero__photo');
+  if (!photo) return;
+
+  function reveal() { photo.classList.add('is-revealed'); }
+
+  if (!('IntersectionObserver' in window)) { reveal(); return; }
+  var io = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) { reveal(); io.disconnect(); }
+  }, { threshold: 0.15 });
+  io.observe(photo);
+})();

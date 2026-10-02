@@ -312,6 +312,14 @@ body { padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom)); 
     min-height: calc(100svh - 64px);
   }
 }
+/* Phones: Pete's hero photo fades in as it scrolls into view (see site.js). */
+@media (max-width: 767px) {
+  .js .hero__photo picture { opacity: 0; transition: opacity .8s ease; }
+  .js .hero__photo.is-revealed picture { opacity: 1; }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .js .hero__photo picture { transition: none; }
+}
 @media (min-width: 768px) {
   .lbl-long { display: inline; }
   .hero__text { gap: 24px; padding-top: 56px; }
