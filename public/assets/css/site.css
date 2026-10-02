@@ -290,6 +290,16 @@ body { padding-bottom: calc(var(--sticky-bar-h) + env(safe-area-inset-bottom)); 
 .hero__photo picture { flex-shrink: 0; }
 .hero__photo img { height: 500px; width: auto; max-width: none; margin-bottom: -60px; }
 
+/* Phones: the hero text fills the first screen (header to sticky bar), extra space above the headline,
+   so Pete's photo starts below the fold instead of peeking out above the action bar. */
+@media (max-width: 767px) {
+  .hero__text {
+    justify-content: flex-end;
+    padding-bottom: 28px;
+    min-height: calc(100vh - 64px - var(--sticky-bar-h));
+    min-height: calc(100svh - 64px - var(--sticky-bar-h) - env(safe-area-inset-bottom));
+  }
+}
 @media (min-width: 768px) {
   .lbl-long { display: inline; }
   .hero__text { gap: 24px; padding-top: 56px; }
