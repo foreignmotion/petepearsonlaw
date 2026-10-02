@@ -47,6 +47,7 @@ npm run images
   two- and three-column sections stack below 1100px. The sticky Text/Call bar shows below 768px.
 - Mobile hero buttons read "Text Pete" / "Call Pete" as in the mobile comp; from 768px up they read
   "Text Attorney Pete >>" / "Call Attorney Pete >>".
+- The homepage "about" panel reuses the hero portrait (cropped to head and shoulders) by design.
 - The About page opener deck is shown on mobile too (the mobile comp omits it; COPY.md lists it).
 - Fonts load from Google Fonts without blocking render (`display=swap`).
 - Checked: axe-core — no violations on either page at 390 and 1440. Lighthouse (local) — 99–100 in all four categories,
@@ -56,6 +57,5 @@ npm run images
 
 - Footer small print: attorney-advertising disclaimer, privacy policy link, office address (placeholder text is in both pages' footers).
 - Avvo badge and LinkedIn icon artwork (mono text links stand in for them now).
-- A second photo of Pete for the homepage "about" panel (currently reuses the portrait).
 - Once there's an office address, add it to the `Attorney` JSON-LD in `index.html`.
 - Confirm the production domain is `https://petepearsonlaw.com` (used in canonical URLs, Open Graph tags, JSON-LD and the sitemap).
